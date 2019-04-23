@@ -37,25 +37,25 @@ export const reqShopsSearch = (geohash, keyword) => ajax('/search_shops', {
 export const reqCaptcha = () => ajax('/captcha')
 
 // 6、用户名密码登陆
-export const reqPwdLogin = (name, pwd, captcha) => ajax('/api/login_pwd', {
+export const reqPwdLogin = ({ name, pwd, captcha }) => ajax('/login_pwd', {
   name,
   pwd,
   captcha
 }, 'POST')
 
 // 7、发送短信验证码
-export const reqSendCode = phone => ajax('/api/sendcode', {
+export const reqSendCode = phone => ajax('/sendcode', {
   phone
 })
 
 // 8、手机号验证码登陆
-export const reqSmsLogin = (phone, code) => ajax('/api/login_sms', {
+export const reqSmsLogin = (phone, code) => ajax('/login_sms', {
   phone,
   code
 }, 'POST')
 
 // 9、根据会话获取用户信息
-export const reqUser = () => ajax('/api/userinfo')
+export const reqUser = () => ajax('/userinfo')
 
 // 10、用户登出
-export const reqLogout = () => ajax('/api/logout')
+export const reqLogout = () => ajax('/logout')
